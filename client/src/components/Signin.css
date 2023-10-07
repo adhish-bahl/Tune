@@ -1,0 +1,201 @@
+  /* @keyframes swing-in-top-fwd {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+}
+
+@keyframes exitAnimation {
+  0% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  5% {
+    animation-timing-function: ease-in;
+    transform: translateY(-30px);
+  }
+
+  15% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  25% {
+    animation-timing-function: ease-in;
+    transform: translateY(-38px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  52% {
+    animation-timing-function: ease-in;
+    transform: translateY(-75px);
+  }
+
+  70% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+} */
+
+@keyframes slide-in-bck-center {
+  0% {
+    -webkit-transform: translateZ(600px);
+            transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    /* background: rgba(49,49,49,0.8); */
+    background: rgba(71, 71, 71, 0);
+}
+.modalContent {
+    /* position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4; */
+    /* background: #f1f1f1; */
+    background: #504e4e;
+    padding: 14px 15px;
+    border-radius: 5px;
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* -webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both; */
+	  /* animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both; */
+    
+    -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    z-index: 5;
+  }
+
+  @-webkit-keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+.closeAni {
+  /* animation: exitAnimation .5s ease 0s 1 normal forwards; */
+    -webkit-animation: fade-out 1s ease-out both;
+	  animation: fade-out 1s ease-out both;
+}
+
+.closeModal:hover, #signinButton:hover {
+    transform: scale(1.08);
+    background-color: white;
+    color: #504e4e;
+}
+
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    border-radius: 50%;
+    outline: none;
+    background-color: #504e4e;
+    color: white;
+}
+
+.form > label, .form > input {
+    display: block;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+input {
+    margin: 7px 0px 10px 0px;
+    border: 0px;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    border-right    : 2px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 31px -5px rgba(0,0,0,0.75);
+    padding: 10px;
+    color: white;
+  }
+  
+  #signinButton {
+    margin: 20px 0px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 31px -5px rgba(0,0,0,0.75);
+    padding: 5px 27px;
+    outline: none;
+    background-color: #504e4e;
+    color: white;
+}
+
+#password1Input {
+  border: 0px;
+  box-shadow: none;
+  margin: 3px;
+}

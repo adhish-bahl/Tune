@@ -1,0 +1,100 @@
+.newsContainer {
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+    border: 1px solid black;
+    margin: 30px;
+    padding-right: 10px;
+    min-height: 290px;
+    height: fit-content;
+    border-radius: 20px;
+    box-sizing: border-box;
+    /* background-color: rgba(44, 53, 50, 0.466); */
+    /* background-color: #444033b9; */
+    background-color: rgba(197, 151, 45, 0.89);
+    /* background-color: rgba(0, 255, 255, 0.623); */
+    box-shadow: 10px 10px 30px -7px rgba(0,0,0,0.75);
+    /* color: whitesmoke; */
+}
+
+.newsUpper {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    box-sizing: inherit
+}
+
+.newsRight {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    box-sizing: inherit;
+}
+
+.newsHeading {
+    font-weight: 500;
+    display: block;
+}
+
+.newsContent {
+    box-sizing: inherit;
+    display: block;
+    text-align: justify;
+}
+
+.newsLeft {
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsImg {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.newsLower {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0px 20px;
+}
+
+.share>img {
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.likeCounter {
+    height: 100%;
+    padding-left: 5px;
+    font-size: 1.2rem;
+}
+
+span {
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.likeCount {   
+    position: relative;
+    bottom: 5px;
+    font-size: 1.4rem;
+    left: 5px;
+}
+
+.likedLogout {
+    position: relative;
+    bottom: -3px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.likeIcon:hover {
+    cursor: pointer;
+}
