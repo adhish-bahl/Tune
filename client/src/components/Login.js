@@ -6,6 +6,7 @@ import "./Signin.css";
 import showPassword from "../images/show-password.svg";
 import hidePassword from "../images/hide-password.svg";
 import axios from "axios";
+import axiosbaseurl from "./axiosbaseurl"; 
 
 function Login(props) {
 	const [signInMessageBoxContent, setSignInMessageBoxContent] = useState();
@@ -39,7 +40,7 @@ function Login(props) {
 		var currentTime = new Date();
 		const age = currentTime.getFullYear() - parseInt(dob.substring(0, 4));
 
-		axios.post("http://localhost:5000/signin", { name: name, email: email1, password: pwd1, dob: dob, phoneNo: number, age: age, })
+		axiosbaseurl.post("signin", { name: name, email: email1, password: pwd1, dob: dob, phoneNo: number, age: age, })
 			.then((res) => {
 				if (res.data === "Added") {
 					setSignInMessageBoxContent("Account created successfully! Please Wait...");
@@ -121,7 +122,7 @@ function Login(props) {
 
 	function checkLogin() {
 
-		axios.post("http://localhost:5000/login", { email: email, password: password, })
+		axiosbaseurl.post("login", { email: email, password: password, })
 			.then((res) => {
 				if (res.data === "Invalid") {
 					setLogInMessageBoxContent("Wrong Email or Password");

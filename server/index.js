@@ -49,9 +49,13 @@ app.post("/login", (req, res) => {
     let query = `select * from users where email = '${email}'`;
 
     conn.query(query, (err, rows) => {
-        let plainPassword = CryptoJS.AES.decrypt(rows[0].password, encryptionKey).toString(CryptoJS.enc.Utf8)
-
-        err ? res.send("error") : plainPassword === password ? res.send(rows) : res.send("Invalid")
+        if(rows.length === 0) {
+            res.send("Invalid")
+        }
+        else {
+            let plainPassword = CryptoJS.AES.decrypt(rows[0].password, encryptionKey).toString(CryptoJS.enc.Utf8)
+            err ? res.send("error") : plainPassword === password ? res.send(rows) : res.send("Invalid")
+        }
     })
 });
 
