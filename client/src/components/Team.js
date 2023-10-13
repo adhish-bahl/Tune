@@ -1,12 +1,12 @@
 import React from "react";
 import "./Team.css";
-// import teamImg from "../images/TeamPicture.jpg";
+import teamImg from "../images/teamImg.jpg";
 
 function Team() {
 	return (
 		<div className="teamContainer">
 			<div className="upper">
-				{/* <img className="teamPicture" src={teamImg} alt="" /> */}
+				<img className="teamPicture" src={teamImg} alt="" />
 			</div>
 			<div className="lower">
 				<h1>About Us</h1>
